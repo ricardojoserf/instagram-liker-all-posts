@@ -2,6 +2,7 @@ import time
 import aux_funcs
 from LevPasha.InstagramAPI import InstagramAPI
 
+delay_seconds = 10
 
 def printUsage():
 	print("Usage: \n+ python main.py -u YOUR_USERNAME -p YOUR_PASSWORD -t USERNAME_TARGET")
@@ -19,6 +20,7 @@ def main():
 			print "Done! \n\nLiking all photos"
 			for p in photos_ids:
 				api.like(p.get("id"))
+				time.sleep( delay_seconds )
 			print "Done!"
 
 		except:
